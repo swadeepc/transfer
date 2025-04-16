@@ -82,7 +82,7 @@
     size_t index_beyond = (size_t)(secret - (char*)buffer);
     printf("%d",*(secret+16));
 
- 
+    char not_a_secret[100];
 
     while(1) {
       flushSideChannel();
@@ -98,7 +98,7 @@
       for (i = 0; i < 255; i++){
         if(scores[max] < scores[i]) max = i;
       }
-      char not_a_secret[100];
+
       printf("Reading secret value at index %ld\n", index_beyond);
       printf("The secret value is %d(%c)\n", max, max);
       printf("The number of hits is %d\n", scores[max]);
