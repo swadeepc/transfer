@@ -95,7 +95,7 @@
       }
 
       int max = 0;
-      for (i = 0; i < 256; i++){
+      for (i = 0; i < 255; i++){
         if(scores[max] < scores[i]) max = i;
       }
 
